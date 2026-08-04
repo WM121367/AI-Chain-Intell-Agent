@@ -1,3 +1,10 @@
 {
-  "version": "1.0.0"
+  "name": "AI-Chain-Intell-Agent",
+  "version": "1.0.0",
+  "description": "Web3 AI/DePIN Infrastructure, Competitors & Sovereign Capital Oracle",
+  "protocols": {
+    "uagents": "0.12.0+",
+    "x402_payment_retry": "enabled"
+  },
+  "last_updated": "2026-08-03"
 }
