@@ -1,40 +1,45 @@
+---
+
+### 2. `AI-Chain & DePIN Infrastructure Intelligence Agent` (README.md)
+
+```markdown
 # 🤖 AI-Chain & DePIN Infrastructure Intelligence Agent (v1.0.0)
 
 > **Web3 AI/DePIN Ecosystem, Ethereum Competitor Surveillance, Sovereign Mega Capital & Data Center Proxy Intelligence Engine with X402 Retry Support.**
 
-`AI-Chain & DePIN Infrastructure Intelligence Agent` は、Web3 AI/DePIN ネットワーク（Bittensor TAO, Render, XRPL X402 等）の分散型計算機需給、Ethereum/Base 上の競合エージェント動向、機関投資家・主権免責ファンド（BlackRock Aladdin, MGX, PIF, Stargate）の巨額資本フロー、および主要データセンター集積地域の電力網・トラフィックプロキシ指標をリアルタイム解析する自律型 AI Agent です。同エコシステム内の **13-Chain** および **Metal** 分析基盤と完全連動して機能します。
+`AI-Chain & DePIN Infrastructure Intelligence Agent` is an autonomous AI agent that performs real-time analysis of decentralized compute supply and demand across Web3 AI/DePIN networks (Bittensor TAO, Render, XRPL X402, etc.), competitor agent activities on Ethereum/Base, institutional and sovereign wealth fund capital flows (BlackRock Aladdin, MGX, PIF, Stargate), and physical grid/traffic proxy metrics across key data center hubs. It operates in full alignment with the **13-Chain** and **Metal** intelligence frameworks within the ecosystem.
 
 ---
 
 ## 🚀 Key Features
 
 * **Web3 AI & DePIN Compute Network Surveillance:**
-  * Bittensor (TAO) サブネット排出量・バリデータステーキング率のモニタリング。
-  * Render / Akash の H100/A100 GPU クラスター稼働率とスポットリース価格推移の追跡。
-  * XRPL 上の X402 AI スターターキットおよび Machine-to-Machine マイクロペイメント・レール解析。
+  * Monitors Bittensor (TAO) subnet emission rates and validator staking ratios.
+  * Tracks H100/A100 GPU cluster utilization rates and spot leasing price trends on Render and Akash.
+  * Analyzes X402 AI starter kits and machine-to-machine micro-payment rails on XRPL.
 * **Ethereum & L2 Agent Competitor Tracking:**
-  * Base / Ethereum 上の Virtuals Protocol, Wayfinder 等のエージェントトークン流動性・オンチェーン自動実行シグナル監視。
-  * ASI:One / uAgents 規格とのシームレスなプロトコル相互運用性の維持。
+  * Tracks agent token liquidity and on-chain automated execution signals on Base and Ethereum (Virtuals Protocol, Wayfinder, etc.).
+  * Maintains seamless protocol interoperability with ASI:One and uAgents standards.
 * **Institutional Mega Capital & Sovereign AI Engine:**
-  * BlackRock Aladdin Copilot（LangChain/Graph 統合）による非公開市場データ処理動向の追跡。
-  * 中東主権免責ファンド（MGX $100B, PIF/Alat $40B+）およびコンソーシアム（Stargate $100B+）の資本配置モニタリング。
+  * Tracks private market data processing trends driven by BlackRock Aladdin Copilot (LangChain/Graph integrations).
+  * Monitors strategic capital allocations from Middle Eastern sovereign wealth funds (MGX $100B, PIF/Alat $40B+) and infrastructure consortia (Stargate $100B+).
 * **Data Center Physical Grid & Network Proxy Metrics:**
-  * 米ヴァージニア州ラウドン郡（PJM Interconnection）やテキサス州（ERCOT）等のデータセンター集中地域における電力需要スパイクの解析。
-  * Cloudflare Radar / IXP データ通信量解析による大規模言語モデル（LLM）学習・データ同期セッションの自動検知。
+  * Analyzes power grid load spikes in major data center corridors, including Loudoun County, Virginia (PJM Interconnection) and Texas (ERCOT).
+  * Automatically detects Large Language Model (LLM) training and data sync sessions through Cloudflare Radar and IXP data traffic volume analysis.
 * **X402 / uAgents Payment Retry Protocol:**
-  * クライアントエージェントからの着金通知（`CommitPayment`）に対し、最大 3 回（3 秒間隔）の非同期リトライ検証を実施。
-  * 決済未確定や遅延時のエラーハンドリング（HTTP 402 風の再試行要求通知）を実装し、完全自律決済の信頼性を確保。
+  * Performs up to 3 asynchronous retry verifications (at 3-second intervals) upon receiving payment notifications (`CommitPayment`) from client agents.
+  * Implements robust error handling (HTTP 402-style retry request notifications) to ensure the reliability of autonomous micro-payments.
 * **uAgents Protocol Native Support:**
-  * `AIDataQueryRequest` を受信後、カテゴリ（`WEB3_AI`, `DEP_INFRA`, `COMPETITORS`, `INSTITUTIONAL`, `ALL`）に応じて動的見積もり（0.5 ~ 3.0 FET）を行い、自動納品を実行。
+  * Receives `AIDataQueryRequest`, calculates dynamic quotes (0.5 ~ 3.0 FET) based on category (`WEB3_AI`, `DEP_INFRA`, `COMPETITORS`, `INSTITUTIONAL`, `ALL`), and executes automated data delivery.
 
 ---
 
 ## 🔗 Synergy with Ecosystem
 
-本 Agent は、エコシステム全体の「AI ✕ 物理インフラ層」を担います。
-1. **13Chain-RWA-Intell-Agent**: パブリックチェーンおよびグローバルマクロ・政府規制を監視[cite: 8]。
-2. **Metal-Commodity-Intell-Agent**: 物理コモディティ（Gold/Silver）の現物供給制約および価値担保をスキャン[cite: 10]。
-3. **AI-Chain-Intell-Agent (本Agent)**: AI 計算リソース、データセンター電力、競合動向、巨額資本配置を分析。
+This agent functions as the dedicated "AI ✕ Physical Infrastructure Layer" across the broader ecosystem:
+1. **13Chain-RWA-Intell-Agent**: Monitors public blockchain ledgers, global macro trends, and government regulatory shifts.
+2. **Metal-Commodity-Intell-Agent**: Scans physical commodity (Gold/Silver) spot supply constraints and backing ratios.
+3. **AI-Chain-Intell-Agent (This Agent)**: Analyzes AI compute capacity, data center power demands, competitor landscapes, and mega-capital deployments.
 
 ---
 
