@@ -7,14 +7,13 @@ import requests
 import time
 import urllib.request
 import xml.etree.ElementTree as ET
+import os
 from uagents import Agent, Context, Model, Protocol
 
 CURRENT_VERSION = "1.0.0"
 
-agent = Agent(
-    name="ai_chain_agent",
-    seed="xxxxxxxxxxxx"  # Agentverseのシードまたは環境変数を設定
-)
+AGENT_SEED = os.getenv("AGENT_SEED", "xxxxxxxxxxxxxxx")
+agent = Agent(name="onchain_event_agent")
 
 # --------------------------------------------------
 # 📊 データ構造定義 (Protocols)
