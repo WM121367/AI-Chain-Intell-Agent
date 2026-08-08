@@ -12,8 +12,13 @@ from uagents import Agent, Context, Model, Protocol
 
 CURRENT_VERSION = "1.0.0"
 
-AGENT_SEED = os.getenv("AGENT_SEED", "xxxxxxxxxxxxxxx")
-agent = Agent(name="onchain_event_agent")
+AGENT_SEED = os.getenv("AGENT_SEED")
+agent = Agent(
+    name="ai_depin_agent",
+    seed=AGENT_SEED,
+    port=8002,
+    endpoint=["http://127.0.0.1:8002/submit"],
+)
 
 # --------------------------------------------------
 # 📊 データ構造定義 (Protocols)
@@ -138,4 +143,20 @@ async def startup_handler(ctx: Context):
     ctx.logger.info(f"🚀 AI-Chain & DePIN Infrastructure Agent (Ver {CURRENT_VERSION}) 起動! | Address: {agent.address}")
 
 if __name__ == "__main__":
+    import os
+    from uagents_core.utils.registration import (
+        register_chat_agent,
+        RegistrationRequestCredentials,
+    )
+
+    # Agentverseへの個別登録（Stock Agent用の名前を指定）
+    register_chat_agent(
+        "subagent_aidepin_local",  # 👈 各子エージェントに応じた固有の名前に変更
+        "https://agentverse.ai",
+        active=True,
+        credentials=RegistrationRequestCredentials(
+            agentverse_api_key=os.environ["AGENTVERSE_KEY"],
+            agent_seed_phrase=os.environ["AGENT_SEED_PHRASE"],
+        ),
+    )
     agent.run()
