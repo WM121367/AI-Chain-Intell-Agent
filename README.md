@@ -1,4 +1,4 @@
-# 🤖 AI-Chain & DePIN Infrastructure Intelligence Agent (v1.0.0)
+# 🤖 AI-Chain & DePIN Infrastructure Intelligence Agent (v1.0.0-cloud)
 
 > **Web3 AI/DePIN Ecosystem, Ethereum Competitor Surveillance, Sovereign Mega Capital & Data Center Proxy Intelligence Engine with X402 Retry Support.**
 
