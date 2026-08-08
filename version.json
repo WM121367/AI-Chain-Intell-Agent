@@ -1,6 +1,6 @@
 {
   "name": "AI-Chain-Intell-Agent",
-  "version": "1.0.0",
+  "version": "1.0.0-cloud",
   "description": "Web3 AI/DePIN Infrastructure, Competitors & Sovereign Capital Oracle",
   "protocols": {
     "uagents": "0.12.0+",
