@@ -1,23 +1,24 @@
 # ==================================================
-# 🤖 AI-Chain & DePIN Infrastructure Intelligence Agent
+# 🤖 AI-Chain & DePIN Infrastructure Intelligence Agent (Cloud Ver)
 # ==================================================
 import asyncio
+import os
 import re
-import requests
 import time
 import urllib.request
 import xml.etree.ElementTree as ET
-import os
+import requests
 from uagents import Agent, Context, Model, Protocol
 
-CURRENT_VERSION = "1.0.0"
+CURRENT_VERSION = "1.0.0-cloud"
 
+# Agentverse Secrets から AGENT_SEED を取得
 AGENT_SEED = os.getenv("AGENT_SEED")
+
+# クラウドホスティング用 Agent 初期化 (port/endpoint は Agentverse が自動制御)
 agent = Agent(
-    name="ai_depin_agent",
-    seed=AGENT_SEED,
-    port=8002,
-    endpoint=["http://127.0.0.1:8002/submit"],
+    name="prime-ai-oracle",
+    seed=AGENT_SEED
 )
 
 # --------------------------------------------------
@@ -142,21 +143,8 @@ async def handle_ai_quote(ctx: Context, sender: str, msg: AIDataQueryRequest):
 async def startup_handler(ctx: Context):
     ctx.logger.info(f"🚀 AI-Chain & DePIN Infrastructure Agent (Ver {CURRENT_VERSION}) 起動! | Address: {agent.address}")
 
+# --------------------------------------------------
+# 🏁 3. エントリーポイント
+# --------------------------------------------------
 if __name__ == "__main__":
-    import os
-    from uagents_core.utils.registration import (
-        register_chat_agent,
-        RegistrationRequestCredentials,
-    )
-
-    # Agentverseへの個別登録（Stock Agent用の名前を指定）
-    register_chat_agent(
-        "subagent_aidepin_local",  # 👈 各子エージェントに応じた固有の名前に変更
-        "https://agentverse.ai",
-        active=True,
-        credentials=RegistrationRequestCredentials(
-            agentverse_api_key=os.environ["AGENTVERSE_KEY"],
-            agent_seed_phrase=os.environ["AGENT_SEED_PHRASE"],
-        ),
-    )
     agent.run()
