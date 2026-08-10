@@ -1,21 +1,17 @@
 # ==================================================
 # 🤖 AI-Chain & DePIN Infrastructure Intelligence Agent (Cloud Ver)
 # ==================================================
-import asyncio
 import os
-import re
 import time
-import urllib.request
-import xml.etree.ElementTree as ET
-import requests
 from uagents import Agent, Context, Model, Protocol
 
 CURRENT_VERSION = "1.0.0-cloud"
 
-# Agentverse Secrets から AGENT_SEED を取得
+# 1. Secretから設定を取得
 AGENT_SEED = os.getenv("AGENT_SEED")
+WMMO_ADDR = os.getenv("WMMO_ADDR")
 
-# クラウドホスティング用 Agent 初期化 (port/endpoint は Agentverse が自動制御)
+# 2. Agent初期化
 agent = Agent(
     name="prime-ai-oracle",
     seed=AGENT_SEED
@@ -110,12 +106,16 @@ def fetch_datacenter_grid_proxies() -> dict:
     }
 
 # --------------------------------------------------
-# 💰 直接レスポンス返信ハンドラー
+# 📥 パターンA: WMMOからのリクエスト受託 ＆ 直接応答ハンドラー
 # --------------------------------------------------
 @agent.on_message(model=AIDataQueryRequest)
 async def handle_ai_quote(ctx: Context, sender: str, msg: AIDataQueryRequest):
+    if WMMO_ADDR and sender != WMMO_ADDR:
+        ctx.logger.warning(f"⚠️ 許可されていないアクセスを拒否しました (Sender: {sender})")
+        return
+
     requested = (msg.category or "ALL").upper()
-    ctx.logger.info(f"📩 [{sender}] からAIインテリジェンス照会受信: Category='{requested}'")
+    ctx.logger.info(f"📩 [{sender}] (WMMO) からAIインテリジェンス照会受信: Category='{requested}'")
     
     web3_data = fetch_web3_ai_depin_metrics()
     competitor_data = fetch_eth_agent_competitors()
@@ -143,8 +143,5 @@ async def handle_ai_quote(ctx: Context, sender: str, msg: AIDataQueryRequest):
 async def startup_handler(ctx: Context):
     ctx.logger.info(f"🚀 AI-Chain & DePIN Infrastructure Agent (Ver {CURRENT_VERSION}) 起動! | Address: {agent.address}")
 
-# --------------------------------------------------
-# 🏁 3. エントリーポイント
-# --------------------------------------------------
 if __name__ == "__main__":
     agent.run()
