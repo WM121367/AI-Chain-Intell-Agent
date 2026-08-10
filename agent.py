@@ -14,7 +14,6 @@ WMMO_ADDR = os.getenv("WMMO_ADDR")
 # 2. Agent初期化
 agent = Agent(
     name="prime-ai-oracle",
-    seed=AGENT_SEED
 )
 
 # --------------------------------------------------
